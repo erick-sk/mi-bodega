@@ -1,14 +1,30 @@
-<p style="color: green"><%= notice %></p>
+<h1>List of Products</h1>
+<a href="<%= new_product_path %>" class="btn btn-primary btn-icon-split mb-4">
+  <span class="icon text-white-50">
+    <i class="fas fa-flag"></i>
+  </span>
+  <span class="text">New Product</span>
+</a>
 
-<h1>Products</h1>
-
-<div id="products">
-  <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Reference</th>
+      <th>Amount</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= product.name %></td>
+        <td><%= product.reference %></td>
+        <td><%= 0 %></td>
+        <td><%= link_to "Details", product_path(product), class: "btn btn-primary" %></td>
+      </tr>
   <% end %>
-</div>
-
-<%= link_to "New product", new_product_path %>
+  </tbody>
+</table>

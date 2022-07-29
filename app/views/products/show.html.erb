@@ -9,7 +9,8 @@
     <div class="d-flex mb-4">
       <%= link_to "Back to products", products_path, class: "btn btn-primary mr-2" %>
       <%= link_to "Edit this product", edit_product_path(@product), class: "btn btn-primary mr-2" %>
-      <%= button_to "Destroy this product", @product, method: :delete, class: "btn btn-danger" %>
+      <%= button_to "Destroy this product", @product, method: :delete, class: "btn btn-danger mr-2" %>
+      <%= link_to "Create Movement", new_movement_product_path(@product), class: "btn btn-success" %>
     </div>
 
     <div class="card">
@@ -36,5 +37,6 @@
         </tr>
       </table>
     </div>
+
   </div>
 </div>

@@ -14,4 +14,9 @@ class Movement < ApplicationRecord
       'Remove' => MovementTypes[:remove]
     }
   end
+
+  def type_name
+    return "Add" if movement_type == MovementTypes[:add]
+    return "Remove" if movement_type == MovementTypes[:remove]
+  end
 end

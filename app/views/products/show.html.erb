@@ -29,7 +29,7 @@
         </tr>
         <tr>
           <td><b>Amount:</b></td>
-          <td><%= 0 %></td>
+          <td><%= @product.quantity %></td>
         </tr>
         <tr>
           <td><b>Created at:</b></td>
@@ -38,5 +38,33 @@
       </table>
     </div>
 
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-lg-12">
+    <div class="card">
+      <h1>Movements</h1>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Comment</th>
+          <th>Date/Time</th>
+        </tr>
+        </thead>
+        <tbody>
+          <% @product.movements.each do |movement| %>
+            <tr>
+              <td><%= movement.type_name %></td>
+              <td><%= movement.quantity %></td>
+              <td><%= movement.comment %></td>
+              <td><%= movement.created_at %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

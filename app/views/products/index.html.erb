@@ -1,10 +1,16 @@
 <h1>List of Products</h1>
-<a href="<%= new_product_path %>" class="btn btn-primary btn-icon-split mb-4">
-  <span class="icon text-white-50">
-    <i class="fas fa-flag"></i>
-  </span>
-  <span class="text">New Product</span>
-</a>
+
+<div class="d-flex align-content-center mb-4">
+  <a href="<%= new_product_path %>" class="btn btn-primary btn-icon-split mr-2">
+    <span class="icon text-white-50">
+      <i class="fas fa-flag"></i>
+    </span>
+    <span class="text">New Product</span>
+  </a>
+
+  <%= link_to "Export excel", products_path(format: :xlsx), class: "btn btn-danger" %>
+</div>
+
 
 <table class="table">
   <thead>
